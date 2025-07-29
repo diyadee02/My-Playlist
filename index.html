@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Audio Playlist with Dropdown</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+  <div class="playlist">
+    <h2>🎧 Playlist</h2>
+    <table>
+      <!-- Calm Vibes -->
+      <tr class="main-track" onclick="toggleSubList(this)">
+        <td colspan="2">🎵 Calm Vibes ▾</td>
+      </tr>
+      <tr class="sub-track"><td colspan="2" onclick="setAudio('calm1.mp3')">🌙 Calm Vibe 1</td></tr>
+      <tr class="sub-track"><td colspan="2" onclick="setAudio('calm2.mp3')">💤 Calm Vibe 2</td></tr>
+
+      <!-- Chill Beats -->
+      <tr class="main-track" onclick="toggleSubList(this)">
+        <td colspan="2">🎶 Chill Beats ▾</td>
+      </tr>
+      <tr class="sub-track"><td colspan="2" onclick="setAudio('chill1.mp3')">🧊 Chill Beat 1</td></tr>
+      <tr class="sub-track"><td colspan="2" onclick="setAudio('chill2.mp3')">❄ Chill Beat 2</td></tr>
+
+      <!-- Workout Anthems -->
+      <tr class="main-track" onclick="toggleSubList(this)">
+        <td colspan="2">🔥 Workout Anthems ▾</td>
+      </tr>
+      <tr class="sub-track"><td colspan="2" onclick="setAudio('workout1.mp3')">🏋️ Workout 1</td></tr>
+      <tr class="sub-track"><td colspan="2" onclick="setAudio('workout2.mp3')">🚴 Workout 2</td></tr>
+
+      <tr>
+        <td class="disabled" colspan="2">🚫 Not Available</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="main-audio">
+    <h2>Now Playing</h2>
+    <audio id="audioPlayer" controls>
+      <source id="audioSource" src="calm1.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <button onclick="playAudio()">▶ Play</button>
+      <button onclick="stopAudio()">⏹ Stop</button>
+    </div>
+  </div>
+
+
+
+
+  <script src="style.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      background: #000;
+      color: white;
+    }
+
+    .playlist {
+      flex: 1 1 300px;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      padding: 20px;
+      z-index: 1;
+    }
+
+    .playlist h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .playlist table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .playlist td {
+      padding: 10px;
+      border-bottom: 1px solid white;
+    }
+
+    .main-track {
+      cursor: pointer;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .main-track:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .sub-track {
+      display: none;
+      background-color: rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+    }
+
+    .sub-track:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .disabled {
+      color: gray;
+      text-align: center;
+    }
+
+    .main-audio {
+      flex: 2 1 400px;
+      padding: 30px 20px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .main-audio::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      filter: blur(10px);
+      z-index: -1;
+    }
+
+    .main-audio h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    audio {
+      margin: 20px 0;
+      width: 100%;
+      max-width: 500px;
+      z-index: 2;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      z-index: 2;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: white;
+      color: #3A1B6B;
+      transition: background 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #ddd;
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .playlist, .main-audio {
+        width: 100%;
+      }
+
+      .main-audio {
+        padding: 20px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
